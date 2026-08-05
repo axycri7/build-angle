@@ -47,7 +47,7 @@ git -C angle reset --hard FETCH_HEAD
 
 pushd angle >/dev/null
 
-python3 scripts/bootstrap.py
+DEPOT_TOOLS_PYTHON_BYPASS=1 python3 scripts/bootstrap.py
 
 GCLIENT_FILE="$(gclient root)/.gclient"
 if grep -q '^target_os[[:space:]]*=' "${GCLIENT_FILE}"; then
